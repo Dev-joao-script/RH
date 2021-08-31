@@ -10,7 +10,7 @@
 </ion-header>
 <ion-content>
   <form #f="ngForm" (ngSubmit)="onSubmit(f)"  >
-    <ion-item>
+    <ion-item hidden>
       <ion-label position="floating" color="primary">CPF:</ion-label>
       <ion-input type="text"  [(ngModel)]="funcionarioIndex"  name="cpf"></ion-input>
     </ion-item>
