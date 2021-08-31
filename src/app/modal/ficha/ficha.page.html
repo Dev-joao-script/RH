@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()" color="danger">
+        Sair
+      </ion-button>
+    </ion-buttons>
+    <ion-title color="primary">{{isUpdate ? 'Alterar' : 'Nova'}} pendencia: Falta.</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)"  >
+    <ion-item>
+      <ion-label position="floating" color="primary">CPF:</ion-label>
+      <ion-input type="text"  [(ngModel)]="funcionarioIndex"  name="cpf"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Calçado:</ion-label>
+      <ion-input type="text" value="{{ficha_epi[0].calcado}}" [(ngModel)]="ficha_epi[0].calcado"  name="calcado"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Braços:</ion-label>
+      <ion-input type="text" value="{{ficha_epi[0].bracos}}"  [(ngModel)]="ficha_epi[0].bracos"  name="bracos"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Cabeca:</ion-label>
+      <ion-input type="text" value="{{ficha_epi[0].cabeca}}" [(ngModel)]="ficha_epi[0].cabeca"  name="cabeca"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Altura:</ion-label>
+      <ion-input type="text" value="{{ficha_epi[0].cinto}}" [(ngModel)]="ficha_epi[0].cinto"  name="cinto"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Dorso:</ion-label>
+      <ion-input type="text" value="{{ficha_epi[0].dorso}}"  [(ngModel)]="ficha_epi[0].dorso"  name="dorso"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Mãos:</ion-label>
+      <ion-input type="text" value="{{ficha_epi[0].luvas}}" [(ngModel)]="ficha_epi[0].luvas"  name="luvas"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Olhos:</ion-label>
+      <ion-input type="text" value="{{ficha_epi[0].olhos}}"  [(ngModel)]="ficha_epi[0].olhos"  name="olhos"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating" color="primary">Ouvidos:</ion-label>
+      <ion-input type="text" value="{{ficha_epi[0].ouvidos}}" [(ngModel)]="ficha_epi[0].ouvidos"  name="ouvidos"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Pernas:</ion-label>
+      <ion-input type="text" value="{{ficha_epi[0].pernas}}" [(ngModel)]="ficha_epi[0].pernas"  name="pernas"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Pescoço:</ion-label>
+      <ion-input type="text" value="{{ficha_epi[0].pescoco}}" [(ngModel)]="ficha_epi[0].pescoco"  name="pescoco"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Uniforme:</ion-label>
+      <ion-input type="text" value="{{ficha_epi[0].uniforme}}" [(ngModel)]="ficha_epi[0].uniforme"  name="uniforme"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Outros</ion-label>
+      <ion-input type="text" value="{{ficha_epi[0].acessorio}}" [(ngModel)]="ficha_epi[0].acessorio"  name="acessorio"></ion-input>
+    </ion-item>
+    
+    <ion-button expand="block" fill="outline" color="primary" type="submit">
+      {{isUpdate ? 'Editar' : 'Salvar para Editar'}}
+    </ion-button>
+  </form>
+</ion-content>

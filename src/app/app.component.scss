@@ -1,0 +1,73 @@
+.Pef_Avatar{
+  width: 60px;
+  height: 60px;
+  border: solid rgba(82, 139, 185, 0.932) 1px;
+  border-radius: 10px;
+  padding: 0px;
+  margin: 5px;
+}
+
+.content-menu-bg{
+  background: rgb(31,108,255);
+  background: -moz-linear-gradient(51deg, rgba(31,108,255,1) 0%, rgba(128,171,254,0.4906337535014006) 38%, rgba(227,237,255,0) 100%);
+  background: -webkit-linear-gradient(51deg, rgba(31,108,255,1) 0%, rgba(128,171,254,0.4906337535014006) 38%, rgba(227,237,255,0) 100%);
+  background: linear-gradient(51deg, rgba(31,108,255,1) 0%, rgba(128,171,254,0.4906337535014006) 38%, rgba(227,237,255,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1f6cff",endColorstr="#e3edff",GradientType=1);
+  width: 1400px;
+  height: 350px;
+  transform: rotate(-15deg);
+  border-radius: 10px 10px 10px 50px;
+  margin-left: -18px;
+  margin-top: -120px;
+  margin-bottom: 60px;
+}
+
+ion-img{
+  width: 40%;
+  height: 40%;
+  left: 50%;
+  text-align: center;
+  align-content: center;
+  align-items: center;
+}
+
+.Card_Perfil{
+  top: 20px;
+  position: absolute;
+  display: flex;
+  --background: rgb(7, 7, 109);
+  box-shadow: 5px 5px 5px black;
+  width: 90%;
+  border-radius: 15px;
+}
+
+.content-menu{
+  --background: white;
+  text-align: center;
+  align-content: center;
+  align-items: center;
+}
+
+.content-list{
+  background: white;
+}
+
+.content-Item{
+  --background: white;
+}
+
+ion-card{
+  background-color: #3880ff;
+}
+
+ion-card-title{
+  color: white;
+}
+
+ion-card-subtitle{
+  color: white;
+}
+
+ion-item{
+  cursor: pointer;
+}

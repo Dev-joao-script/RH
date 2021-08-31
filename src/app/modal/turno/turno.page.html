@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()" color="danger">
+        Sair
+      </ion-button>
+    </ion-buttons>
+    <ion-title color="primary">{{isUpdate ? 'Editar' : 'Nova'}} pendencia: Falta.</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <ion-item>
+      <ion-label position="floating" color="primary">Funcionario:</ion-label>
+      <ion-select multiple="false" interface="action-sheet" name="Nome" (ionChange)="teste($event);" selectedText = "{{isUpdate ? selected : ''}}" >
+        <ion-select-option *ngFor="let funcionario of funcionarios" value="{{funcionario.Codigo + '/' + funcionario.Funcionarios }}">{{funcionario.Funcionarios}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-list>
+      <ion-item>
+        <ion-label color="primary"><strong>Troca por Turno</strong> </ion-label>
+        <ion-toggle color="primary" [(ngModel)]="typeof" name="typeof" ></ion-toggle>
+      </ion-item>
+    </ion-list>
+
+    <ion-item [ngClass]="typeof ? 'hide' : 'show' ">
+      <ion-label position="floating" color="primary">Funcionario:</ion-label>
+      <ion-select multiple="false" [(ngModel)]="dataSbt.Tratativa" interface="action-sheet" name="Tratativa" selectedText = "{{isUpdate ? selected : ''}}" >
+        <ion-select-option *ngFor="let funcionario of funcionarios" value="{{funcionario.Codigo + '/' + funcionario.Funcionarios }}">{{funcionario.Funcionarios}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+
+    <ion-item [ngClass]="typeof ? 'show' : 'hide' "> 
+      <ion-label position="floating" color="primary">Horario:</ion-label>
+      <ion-select multiple="false" [(ngModel)]="dataSbt.Tratativa" interface="action-sheet" name="Tratativa" selectedText = "{{isUpdate ? selected : ''}}" >
+        <ion-select-option value="12x36 - 19:00 as 07:00">12x36 - 19:00 as 07:00
+        </ion-select-option>
+        <ion-select-option value="12x36 - 07:00 as 19:00">12x36 - 07:00 as 19:00
+        </ion-select-option>
+        <ion-select-option value="Central - 07:00 as 16:48"> Central - 07:00 as 16:48
+        </ion-select-option>
+        <ion-select-option value="Administrativo - 07:00 as 17:00"> Administrativo - 07:00 as 17:00
+        </ion-select-option>
+        <ion-select-option value="Turno - 06:00 as 14:20">Turno 06:00 as 14:20
+        </ion-select-option>
+        <ion-select-option value="Turno - 14:10 as 22:26">Turno 14:10 as 22:26
+        </ion-select-option>
+        <ion-select-option value="Turno - 21:35 as 05:00">Turno 21:35 as 05:00
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+
+    <ion-item hidden>
+      <ion-label position="floating" color="primary">Codigo:</ion-label>
+      <ion-input type="text" name="Cod"  [(ngModel)]="valueA"  value="{{valueA}}"></ion-input>
+    </ion-item>
+    <ion-item hidden>
+      <ion-label position="floating" color="primary">Nome:</ion-label>
+      <ion-input type="text"  name="Nome"  [(ngModel)]="valueB" value="{{valueB}}"></ion-input>
+    </ion-item>
+
+    <ion-item hidden>
+      <ion-label position="floating" color="primary">Nome:</ion-label>
+      <ion-input type="text"  name="Titulo" [(ngModel)]="Titulo" value="{{Titulo}}"></ion-input>
+    </ion-item>
+
+    <ion-item hidden>
+      <ion-label position="floating" color="primary">Nome:</ion-label>
+      <ion-input type="text"  name="Descricao" [(ngModel)]="Descricao" value="{{Descricao}}"></ion-input>
+    </ion-item>
+
+    <ion-item hidden>
+      <ion-label position="floating" color="primary">Nome:</ion-label>
+      <ion-input type="text"  name="Tipo" [(ngModel)]="Tipo" value="{{Tipo}}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Data inicial:</ion-label>
+      <ion-input type="date" placeholder=""  [(ngModel)]="dataSbt.Data"  name="Data"></ion-input>
+    </ion-item>
+
+    <ion-item hidden>
+      <ion-label position="floating" color="primary">Batida 4:</ion-label>
+      <ion-input type="time" value="NP" [(ngModel)]="dataSbt.Justificativa"  name="Justificativa"></ion-input>
+    </ion-item>
+    
+    <ion-button expand="block" fill="outline" color="primary" type="submit">
+      {{isUpdate ? 'Editar' : 'Cadastrar'}}
+    </ion-button>
+  </form>
+
+</ion-content>

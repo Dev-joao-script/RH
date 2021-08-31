@@ -1,0 +1,39 @@
+ion-button[color="black"]{
+  text-transform: initial;
+}
+
+ion-content{
+  --background: white;
+  overflow: hidden;
+}
+
+@-webkit-keyframes slide-in-bottom{0%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@keyframes slide-in-bottom{0%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}};
+ion-card{
+  -webkit-animation:slide-in-bottom 1.5s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-bottom 1.5s cubic-bezier(.25,.46,.45,.94) both;
+border-top-left-radius: 30px;
+border-top-right-radius: 30px;
+height: 430px;
+width: 100%;
+position: absolute;
+margin: 0px;
+bottom: -0.5px;
+}
+
+.BtnLogin{
+  --background: #3880ff;
+  color: white;
+}
+
+.BtnCadastro{
+  --background: #DCE35B;  /* fallback for old browsers */
+  --background: -webkit-linear-gradient(to right, #45B649, #DCE35B);  /* Chrome 10-25, Safari 5.1-6 */
+  --background: linear-gradient(to right, #45B649, #DCE35B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+.Img{
+  margin-top: 3px;
+}
+
+.ios ion-content{
+  font: 12px;
+}

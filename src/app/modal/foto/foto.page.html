@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()" color="danger">
+        Sair
+      </ion-button>
+    </ion-buttons>
+    <ion-title color="primary">Editar Foto de Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form #f="ngForm" (ngSubmit)="onSubmit(FuncionarioData.Codigo)">
+    <div class="Pctures">
+      <img src="{{pictture}}" alt="" name="pictture" value="" accept="image/png, image/jpeg" class="PrevilPicture">
+      </div>
+      <ion-item hidden>
+        <ion-label position="floating" color="primary">Nome:</ion-label>
+        <ion-input autocomplete type="text" name="Funcionarios"  [(ngModel)]="FuncionarioData.Codigo" value="{{FuncionarioData.Codigo}}"></ion-input>
+      </ion-item>
+    <ion-item>
+      <ion-item>
+        <ion-icon color="primary" slot="start" name="add"></ion-icon>
+        <input [formControl]="file" (change)="fileChange($event)" value ="" type="file" class="file_customizada">
+      </ion-item>
+    </ion-item>
+    <ion-button expand="block" fill="outline" type="submit" color="primary">
+     Editar
+    </ion-button>
+</form>
+</ion-content>

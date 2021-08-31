@@ -1,0 +1,259 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()" color="danger">
+        Sair
+      </ion-button>
+    </ion-buttons>
+    <ion-title color="primary">{{isUpdate ? 'Editar Cadastro de ' + FuncionarioData.Funcionarios : 'Novo Cadastro'}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <ion-item>
+      <ion-label position="floating" color="primary">Nome:</ion-label>
+      <ion-input autocomplete type="text" name="Funcionarios"  [(ngModel)]="FuncionarioData.Funcionarios" value="{{FuncionarioData.Funcionarios}}"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="primary">CPF:</ion-label>
+      <ion-input autocomplete type="text"  name="CPF"  [(ngModel)]="FuncionarioData.CPF" [brmasker]="{mask:'000.000.000-00', len:14}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Data de Admissao:</ion-label>
+      <ion-input type="date" placeholder=""  [(ngModel)]="FuncionarioData.DatadeAdmissao" name="DatadeAdmissao"></ion-input>
+    </ion-item>
+
+    <ion-item hidden>
+      <ion-label position="floating" color="primary">Status:</ion-label>
+      <ion-input type="text"  name="Status" value="Ativo" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Nome da Mãe:</ion-label>
+      <ion-input autocomplete type="text" placeholder=""  [(ngModel)]="FuncionarioData.Mae"  name="Mae"></ion-input>
+    </ion-item>
+
+    <ion-item >
+      <ion-label position="floating" color="primary">Data de Nascimento:</ion-label>
+      <ion-input type="date" placeholder="" [(ngModel)]="FuncionarioData.Nascimento" name="Nascimento"></ion-input>
+
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary">Sexo</ion-label>
+      <ion-select value="" multiple="false" placeholder="sexo..." name="sexo" [(ngModel)]="FuncionarioData.sexo">
+        <ion-select-option value="Masculino">Masculino</ion-select-option>
+        <ion-select-option value="Feminino">Feminino</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label color="primary">Estado-Civil</ion-label>
+      <ion-select value="" multiple="false" placeholder="EstadoCivil..." name="EstadoCivil" [(ngModel)]="FuncionarioData.EstadoCivil">
+        <ion-select-option value="Solteiro">Solteiro</ion-select-option>
+        <ion-select-option value="Casado">Casado</ion-select-option>
+        <ion-select-option value="Separado">Separado</ion-select-option>
+        <ion-select-option value="Divorciado">Divorciado</ion-select-option>
+        <ion-select-option value="Viúvo">Viúvo</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" position="floating" color="primary">CTPS:</ion-label>
+      <ion-input autocomplete type="text" placeholder=""  [(ngModel)]="FuncionarioData.CTPS"  name="CTPS"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="primary">Serie-ctps</ion-label>
+      <ion-input autocomplete type="text" placeholder=""  [(ngModel)]="FuncionarioData.seriectps"  name="seriectps"></ion-input>
+    </ion-item>
+
+    <ion-item >
+      <ion-label position="floating" color="primary">Data-ctps</ion-label>
+      <ion-input type="date" placeholder="" [(ngModel)]="FuncionarioData.datactps" name="datactps"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary">UF - CTPS</ion-label>
+      <ion-select value="" multiple="false" placeholder="UF - CTPS..." name="UF" [(ngModel)]="FuncionarioData.UF">
+        <ion-select-option  value="AC">AC</ion-select-option >
+        <ion-select-option  value="Al">AL</ion-select-option >
+        <ion-select-option  value="AP">AP</ion-select-option >
+        <ion-select-option  value="AM">AM</ion-select-option >
+        <ion-select-option  value="BA">BA</ion-select-option >
+        <ion-select-option  value="CE">CE</ion-select-option >
+        <ion-select-option  value="DF">DF</ion-select-option >
+        <ion-select-option  value="ES">ES</ion-select-option >
+        <ion-select-option  value="GO">GO</ion-select-option >
+        <ion-select-option  value="MA">MA</ion-select-option >
+        <ion-select-option  value="MT">MT</ion-select-option >
+        <ion-select-option  value="MS">MS</ion-select-option >
+        <ion-select-option  value="MG">MG</ion-select-option >
+        <ion-select-option  value="PA">PA</ion-select-option >
+        <ion-select-option  value="PB">PB</ion-select-option >
+        <ion-select-option  value="PR">PR</ion-select-option >
+        <ion-select-option  value="PE">PE</ion-select-option >
+        <ion-select-option  value="PI">PI</ion-select-option >
+        <ion-select-option  value="RJ">RJ</ion-select-option >
+        <ion-select-option  value="RN">RN</ion-select-option >
+        <ion-select-option  value="RS">RS</ion-select-option >
+        <ion-select-option  value="RO">RO</ion-select-option >
+        <ion-select-option  value="RR">RR</ion-select-option >
+        <ion-select-option  value="SC">SC</ion-select-option >
+        <ion-select-option  value="SP">SP</ion-select-option >
+        <ion-select-option  value="SE">SE</ion-select-option >
+        <ion-select-option  value="TO">TO</ion-select-option >
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Remuneracao:</ion-label>
+      <ion-input autocomplete type="text"  [(ngModel)]="FuncionarioData.Remuneracao"  name="Remuneracao" placeholder="(R$) Real" [brmasker]="{money: true, decimal: 2}"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="primary">Identidade:</ion-label>
+      <ion-input autocomplete type="text" placeholder="" value = "" [(ngModel)]="FuncionarioData.ID"  name="ID"></ion-input>
+    </ion-item>
+
+    <ion-item >
+      <ion-label position="floating" color="primary">Data de Emissão:</ion-label>
+      <ion-input type="date" placeholder="" [(ngModel)]="FuncionarioData.DataEmissao" name="DataEmissao"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Orgão-Expedidor:</ion-label>
+      <ion-input autocomplete type="text" placeholder=""  value = "" [(ngModel)]="FuncionarioData.OrgaoExpedidor"  name="OrgaoExpedidor"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" >UF - Expedicao</ion-label>
+      <ion-select value="" multiple="false" placeholder="UF-expedicao..." name="UFexpedicao" [(ngModel)]="FuncionarioData.UFexpedicao">
+        <ion-select-option  value="AC">AC</ion-select-option >
+        <ion-select-option  value="Al">AL</ion-select-option >
+        <ion-select-option  value="AP">AP</ion-select-option >
+        <ion-select-option  value="AM">AM</ion-select-option >
+        <ion-select-option  value="BA">BA</ion-select-option >
+        <ion-select-option  value="CE">CE</ion-select-option >
+        <ion-select-option  value="DF">DF</ion-select-option >
+        <ion-select-option  value="ES">ES</ion-select-option >
+        <ion-select-option  value="GO">GO</ion-select-option >
+        <ion-select-option  value="MA">MA</ion-select-option >
+        <ion-select-option  value="MT">MT</ion-select-option >
+        <ion-select-option  value="MS">MS</ion-select-option >
+        <ion-select-option  value="MG">MG</ion-select-option >
+        <ion-select-option  value="PA">PA</ion-select-option >
+        <ion-select-option  value="PB">PB</ion-select-option >
+        <ion-select-option  value="PR">PR</ion-select-option >
+        <ion-select-option  value="PE">PE</ion-select-option >
+        <ion-select-option  value="PI">PI</ion-select-option >
+        <ion-select-option  value="RJ">RJ</ion-select-option >
+        <ion-select-option  value="RN">RN</ion-select-option >
+        <ion-select-option  value="RS">RS</ion-select-option >
+        <ion-select-option  value="RO">RO</ion-select-option >
+        <ion-select-option  value="RR">RR</ion-select-option >
+        <ion-select-option  value="SC">SC</ion-select-option >
+        <ion-select-option  value="SP">SP</ion-select-option >
+        <ion-select-option  value="SE">SE</ion-select-option >
+        <ion-select-option  value="TO">TO</ion-select-option >
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">PIS:</ion-label>
+      <ion-input autocomplete type="text" placeholder=""  value = "" [(ngModel)]="FuncionarioData.PIS"  name="PIS" [brmasker]="{mask:'000.00000.00-0', len:14}"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="primary">Endereço:</ion-label>
+      <ion-input autocomplete type="text" placeholder=""  value = "" [(ngModel)]="FuncionarioData.endereco"  name="endereco"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="primary">Bairro</ion-label>
+      <ion-input autocomplete type="text" placeholder=""  value = "" [(ngModel)]="FuncionarioData.bairro"  name="bairro"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="primary">Municipio</ion-label>
+      <ion-input autocomplete type="text" placeholder=""  value = "" [(ngModel)]="FuncionarioData.municipio"  name="municipio"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="primary">CEP:</ion-label>
+      <ion-input autocomplete type="text" placeholder=""  value = "" [(ngModel)]="FuncionarioData.cep"  name="cep" [brmasker]="{mask:'00.000-000', len:10}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary">UF - Moradia</ion-label>
+      <ion-select value="" multiple="false" placeholder="UF-Moradia..." name="UFmoradia" [(ngModel)]="FuncionarioData.UFmoradia">
+        <ion-select-option  value="AC">AC</ion-select-option >
+        <ion-select-option  value="Al">AL</ion-select-option >
+        <ion-select-option  value="AP">AP</ion-select-option >
+        <ion-select-option  value="AM">AM</ion-select-option >
+        <ion-select-option  value="BA">BA</ion-select-option >
+        <ion-select-option  value="CE">CE</ion-select-option >
+        <ion-select-option  value="DF">DF</ion-select-option >
+        <ion-select-option  value="ES">ES</ion-select-option >
+        <ion-select-option  value="GO">GO</ion-select-option >
+        <ion-select-option  value="MA">MA</ion-select-option >
+        <ion-select-option  value="MT">MT</ion-select-option >
+        <ion-select-option  value="MS">MS</ion-select-option >
+        <ion-select-option  value="MG">MG</ion-select-option >
+        <ion-select-option  value="PA">PA</ion-select-option >
+        <ion-select-option  value="PB">PB</ion-select-option >
+        <ion-select-option  value="PR">PR</ion-select-option >
+        <ion-select-option  value="PE">PE</ion-select-option >
+        <ion-select-option  value="PI">PI</ion-select-option >
+        <ion-select-option  value="RJ">RJ</ion-select-option >
+        <ion-select-option  value="RN">RN</ion-select-option >
+        <ion-select-option  value="RS">RS</ion-select-option >
+        <ion-select-option  value="RO">RO</ion-select-option >
+        <ion-select-option  value="RR">RR</ion-select-option >
+        <ion-select-option  value="SC">SC</ion-select-option >
+        <ion-select-option  value="SP">SP</ion-select-option >
+        <ion-select-option  value="SE">SE</ion-select-option >
+        <ion-select-option  value="TO">TO</ion-select-option >
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Telefone-Pessoal:</ion-label>
+      <ion-input autocomplete type="text" placeholder=""  value = "" [(ngModel)]="FuncionarioData.TelefonePessoal"  name="TelefonePessoal" [brmasker]="{mask:'(00) 0 0000-0000', len:16}"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="primary">Ocupacão:</ion-label>
+      <ion-input autocomplete type="text" placeholder=""  value = "" [(ngModel)]="FuncionarioData.Ocupacao"  name="Ocupacao"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="primary">CBO:</ion-label>
+      <ion-input autocomplete type="text" placeholder=""  value = "" [(ngModel)]="FuncionarioData.CBO"  name="CBO"></ion-input>
+    </ion-item>
+  
+
+      <ion-item>
+        <ion-label color="primary">Filiacao</ion-label>
+        <ion-select value="" multiple="false" placeholder="Filiacao..." name="Filiacao" [(ngModel)]="FuncionarioData.Filiacao">
+          <ion-select-option value="Empregado">Empregado</ion-select-option>
+          <ion-select-option value="Autonomo">Autonomo</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary">Aposentado</ion-label>
+        <ion-select value="" multiple="false" placeholder="Aposentado..." name="aposentado" [(ngModel)]="FuncionarioData.aposentado">
+          <ion-select-option value="Sim">Sim</ion-select-option>
+          <ion-select-option value="Não">Não</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary">Setor</ion-label>
+        <ion-select value="" multiple="false" placeholder="Setor..." name="Setor" [(ngModel)]="FuncionarioData.Setor">
+          <ion-select-option value="Administrativo">Administrativo</ion-select-option>
+          <ion-select-option value="Produção">Produção</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+    <ion-button expand="block" fill="outline" color="primary" type="submit">
+      {{isUpdate ? 'Editar' : 'Cadastrar'}}
+    </ion-button>
+  </form>
+
+</ion-content>

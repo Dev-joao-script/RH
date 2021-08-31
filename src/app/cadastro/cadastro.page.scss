@@ -1,0 +1,34 @@
+ion-button[color="black"]{
+    text-transform: initial;
+  }
+  
+  ion-content{
+    --background: linear-gradient( 135deg, #FDEB71 10%, #F8D800 100%);
+    overflow: hidden;
+  }
+  
+  @-webkit-keyframes slide-in-bottom{0%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@keyframes slide-in-bottom{0%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}};
+  ion-card{
+    -webkit-animation:slide-in-bottom 1.5s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-bottom 1.5s cubic-bezier(.25,.46,.45,.94) both;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  height: 400px;
+  width: 100%;
+  position: absolute;
+  margin: 0px;
+  bottom: -1px;
+  }
+  
+  .BtnLogin{
+    --background: linear-gradient( 135deg, #FDEB71 10%, #F8D800 100%);
+    color: #3880ff;
+  }
+  
+  .Img{
+    margin-top: 3px;
+  }
+  
+  .ios ion-content{
+    font: 12px;
+  }
+  

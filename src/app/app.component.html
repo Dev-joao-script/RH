@@ -1,0 +1,86 @@
+<ion-app>
+  <ion-menu menuId="main-menu" content-id="main">
+<ion-content class="content-menu">
+  <ion-card-header class="card-header" *ngFor="let membro of menbros " >
+    <img class="Pef_Avatar" src="http://www.cepelma.com.br/IMAGENS/{{membro.scan}}" alt="">
+    <ion-card-subtitle color="light">{{membro.Ocupacao}}</ion-card-subtitle>
+    <ion-card-title color="light">{{membro.nome}}</ion-card-title>
+  </ion-card-header>
+<ion-list class="content-list">
+<ion-menu-toggle>
+  <ion-item  class="content-Item" (click)="GoenOne()">
+    <ion-icon  color="primary" slot="start" name="pricetag-outline"></ion-icon>
+    <ion-label>Justificativas</ion-label>
+  </ion-item>
+</ion-menu-toggle>
+<ion-menu-toggle>
+  <ion-item  class="content-Item" (click)="GoenTratamentos()">
+    <ion-icon  color="primary" slot="start" name="pricetags-outline"></ion-icon>
+    <ion-label>Tratamentos</ion-label>
+  </ion-item>
+</ion-menu-toggle>
+    <ion-menu-toggle>
+  <ion-item  class="content-Item"   (click)="GoenFuncionarios()">
+    <ion-icon  color="primary" slot="start" name="people-outline"></ion-icon>
+    <ion-label>Funcionarios</ion-label>
+  </ion-item>
+</ion-menu-toggle>
+<!-- <ion-menu-toggle>
+  <ion-item  class="content-Item" (click)="GoenNav()">
+    <ion-icon  color="primary" slot="start" name="newspaper-outline"></ion-icon>
+    <ion-label>Pasta</ion-label>
+  </ion-item>
+</ion-menu-toggle> -->
+<ion-menu-toggle>
+  <ion-item  class="content-Item" routerLink="lancamentos">
+    <ion-icon  color="primary" slot="start" name="file-tray-stacked-outline"></ion-icon>
+    <ion-label>Documentos</ion-label>
+  </ion-item>
+</ion-menu-toggle>
+<ion-menu-toggle>
+  <ion-item  class="content-Item">
+    <ion-icon  color="primary" slot="start" name="alert-circle-outline" ></ion-icon>
+    <ion-label>Procedimentos</ion-label>
+  </ion-item>
+</ion-menu-toggle>
+<ion-menu-toggle>
+  <ion-item  class="content-Item">
+    <ion-icon  color="primary" slot="start" name="document-text-outline" ></ion-icon>
+    <ion-label>Regulamentos</ion-label>
+  </ion-item>
+</ion-menu-toggle>
+<ion-menu-toggle>
+  <ion-item  class="content-Item">
+    <ion-icon  color="primary" slot="start" name="document-attach-outline" ></ion-icon>
+    <ion-label>Acordos e Convenções</ion-label>
+  </ion-item>
+</ion-menu-toggle>
+<ion-menu-toggle>
+  <ion-item  class="content-Item">
+    <ion-icon  color="primary" slot="start" name="document-text-outline" ></ion-icon>
+    <ion-label>Pendencias-Pasta</ion-label>
+  </ion-item>
+</ion-menu-toggle>
+<ion-menu-toggle>
+  <ion-item  class="content-Item">
+    <ion-icon  color="primary" slot="start" name="cube-outline" ></ion-icon>
+    <ion-label>Inventario</ion-label>
+  </ion-item>
+</ion-menu-toggle>
+<!-- <ion-menu-toggle>
+  <ion-item  class="content-Item" (click)="GoenSeguranca()">
+    <ion-icon  color="primary" slot="start" name="hand-right-outline" ></ion-icon>
+    <ion-label>Segurança do trabalho</ion-label>
+  </ion-item>
+</ion-menu-toggle> -->
+<ion-menu-toggle>
+  <ion-item  class="content-Item"  (click)="backButtonEvent()">
+    <ion-icon  color="primary" slot="start" name="exit-outline" ></ion-icon>
+    <ion-label>Sair</ion-label>
+  </ion-item>
+</ion-menu-toggle>
+</ion-list>
+</ion-content>
+</ion-menu>
+<ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

@@ -1,0 +1,13 @@
+img{
+    border-radius: 100%;
+    margin: 0.5%;
+    width: 95%;
+}
+
+
+ion-item {
+    cursor: grab;
+  }
+  ion-item:active{
+    cursor: grabbing;
+  }

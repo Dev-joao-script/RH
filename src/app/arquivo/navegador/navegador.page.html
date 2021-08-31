@@ -1,0 +1,168 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Navegador - Arquivos:</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="tertiary" (click)="Back()">
+        <ion-icon color="light" slot="start" name="return-up-back-outline" class="back"></ion-icon>
+        Voltar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-searchbar placeholder="Buscar por documentos..." [(ngModel)]="filterDoc" animated="true" autocomplete>
+</ion-searchbar>
+<ion-content>
+
+  <ion-list>
+    <ion-item *ngFor="let funcionario of Funcionarios">
+      <ion-card class="fullWidth ion-padding">
+        <ion-item class="Center">
+          <img class="Slid_img2" src="https://www.cepelma.com.br/IMAGENS/{{funcionario.scan}}">
+        </ion-item>
+        <ion-card-header>
+          <ion-card-subtitle>{{funcionario.Ocupacao}}</ion-card-subtitle>
+          <ion-card-title>{{funcionario.Funcionarios}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          CPF: {{funcionario.CPF}}, - PIS: {{funcionario.PIS}}.
+          <ion-item class="ion-margin">
+            <ion-title class="blue"><strong>
+                <ion-icon slot="start" name="wallet"></ion-icon>
+                Contra Cheques
+              </strong></ion-title>
+          </ion-item>
+          <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
+              <ion-slide *ngFor="let cont_cheque of cont_cheques | filter:filterDoc"
+              style="width: 180px; height: 200px;">
+                <ion-card class="ion-padding">
+                  <ion-item class="Center">
+                    <ion-img class="Slid_img" [src]="image"></ion-img>
+                  </ion-item>
+                  <ion-card-header>
+                    <ion-label class="red">
+                      <small>
+                        {{cont_cheque.Tipo}}
+                      </small>
+                    </ion-label>
+                    <ion-label>
+                      <strong>
+                        {{cont_cheque.Periodo}}
+                      </strong>
+                    </ion-label>
+                  </ion-card-header>
+                  <ion-card-content class="blue">
+                    <ion-icon slot="start" name="download-outline"></ion-icon>
+                    <a href="https://www.cepelma.com.br/DOCUMENTOS/{{cont_cheque.scan}}" target="_Blank">Download</a>
+                  </ion-card-content>
+                </ion-card>
+              </ion-slide>
+          </ion-slides>
+
+
+
+          <ion-item class="ion-margin">
+            <ion-title class="blue"><strong>
+                <ion-icon slot="start" name="wallet"></ion-icon>
+                Cartão de Ponto
+              </strong></ion-title>
+          </ion-item>
+          <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
+              <ion-slide *ngFor="let car_pont of car_ponto | filter:filterDoc"
+              style="width: 180px; height: 200px;">
+                <ion-card class="ion-padding">
+                  <ion-item class="Center">
+                    <ion-img class="Slid_img" [src]="image"></ion-img>
+                  </ion-item>
+                  <ion-card-header>
+                    <ion-label>
+                      <strong>
+                        {{car_pont.Periodo}}
+                      </strong>
+                    </ion-label>
+                  </ion-card-header>
+                  <ion-card-content class="blue">
+                    <ion-icon slot="start" name="download-outline"></ion-icon>
+                    <a href="https://www.cepelma.com.br/DOCUMENTOS/{{car_pont.scan}}" target="_Blank">Download</a>
+                  </ion-card-content>
+                </ion-card>
+              </ion-slide>
+          </ion-slides>
+
+          <ion-item class="ion-margin">
+            <ion-title class="blue"><strong>
+                <ion-icon slot="start" name="wallet"></ion-icon>
+                Ferias
+              </strong></ion-title>
+          </ion-item>
+          <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
+              <ion-slide *ngFor="let feria of ferias | filter:filterDoc"
+              style="width: 300px; height: 300px;">
+                <ion-card class="ion-padding">
+                  <ion-item class="Center">
+                    <ion-img class="Slid_img" [src]="image"></ion-img>
+                  </ion-item>
+                  <ion-card-header>
+                    <ion-label class="red">
+                      <small>
+                        {{feria.Tipo_Ferias}}
+                      </small>
+                    </ion-label>
+                    <ion-label>
+                      <strong>
+                        {{feria.Inicio_perioro}} - {{feria.Termino_periodo}}
+                      </strong>
+                    </ion-label>
+                  </ion-card-header>
+
+                  <ion-card-content class="blue">
+                    <ion-item>
+                      <ion-icon slot="start" name="download-outline"></ion-icon>
+                      <a href="https://www.cepelma.com.br/DOCUMENTOS/{{feria.Aviso_de_Ferias}}" target="_Blank">Avs. Férias</a>
+                    </ion-item>
+                    <ion-item>
+                      <ion-icon slot="start" name="download-outline"></ion-icon>
+                      <a href="https://www.cepelma.com.br/DOCUMENTOS/{{feria.Recibo_de_Ferias}}" target="_Blank">Rcb. Férias</a>
+                    </ion-item>
+                  </ion-card-content>
+                </ion-card>
+              </ion-slide>
+          </ion-slides>
+
+          <ion-item class="ion-margin">
+            <ion-title class="blue"><strong>
+                <ion-icon slot="start" name="wallet"></ion-icon>
+                Atestados
+              </strong></ion-title>
+          </ion-item>
+          <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
+              <ion-slide *ngFor="let atestado of atestados | filter:filterDoc"
+              style="width: 200px; height: 200px;">
+                <ion-card class="ion-padding">
+                  <ion-item class="Center">
+                    <ion-img class="Slid_img" [src]="image"></ion-img>
+                  </ion-item>
+                  <ion-card-header>
+                    <ion-label class="red">
+                      <small>
+                        {{atestado.Sid}}
+                      </small>
+                    </ion-label>
+                    <ion-label>
+                      <strong>
+                        {{atestado.Data_Inicio}} - {{atestado.Data_Fim}}
+                      </strong>
+                    </ion-label>
+                  </ion-card-header>
+                  <ion-card-content class="blue">
+                    <ion-icon slot="start" name="download-outline"></ion-icon>
+                    <a href="https://www.cepelma.com.br/DOCUMENTOS/{{atestado.Scan}}" target="_Blank">Download</a>
+                  </ion-card-content>
+                </ion-card>
+              </ion-slide>
+          </ion-slides>
+        </ion-card-content>
+      </ion-card>
+
+    </ion-item>
+  </ion-list>
+</ion-content>

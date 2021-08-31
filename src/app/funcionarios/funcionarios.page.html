@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="primary" menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button color="tertiary" (click)="Back()">
+        <ion-icon color="light" slot="start" name="return-up-back-outline" class="back"></ion-icon>
+        Voltar
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-button color="tertiary" (click)="addFuncionario()">
+        <ion-icon slot="start" name="person-add-outline"></ion-icon>
+        Adicionar
+      </ion-button>
+    </ion-buttons>
+    <ion-title color="primary">Funcionarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+  <ion-searchbar placeholder="Buscar..." [(ngModel)]="filterTerm" animated="true" autocomplete
+  ></ion-searchbar>
+<ion-content class="ion-padding transparent">
+  <ion-content class="transparent" >
+    <ion-list class="transparent" *ngFor="let Funcionario of Funcionarios | filter:filterTerm">
+      <ion-item-sliding class="transparent" >
+        <ion-item class="transparent"> 
+          <ion-avatar slot="start" class="transparent" (click)="ChangePerfilPic(Funcionario)">
+           <div class="avatarImg">
+            <img src="https://www.cepelma.com.br/IMAGENS/{{Funcionario.scan}}">
+           </div>
+          </ion-avatar>
+          <ion-label class="transparent">
+          <h3 class="title transparent">{{Funcionario.Funcionarios}}</h3>
+          <p class="subtext transparent">{{'CPF: ' + Funcionario.CPF + ' - Data de Admissão: ' + Funcionario.DatadeAdmissao.substring(8,10) + '/' + Funcionario.DatadeAdmissao.substring(5,7) + '/' + Funcionario.DatadeAdmissao.substring(0,4) }}</p>
+          </ion-label>
+        </ion-item>
+        <ion-item-options side="start">
+          <ion-item-option color="primary" (click)="Path(Funcionario.Codigo)">
+            <ion-icon name="newspaper"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+        <ion-item-options side="end">
+          <ion-item-option color="success" (click)="vew(Funcionario)">
+            <ion-icon name="eye-outline"></ion-icon>
+          </ion-item-option>
+          <ion-item-option color="warning" (click)="Edit(Funcionario)">
+            <ion-icon name="person-outline"></ion-icon>
+          </ion-item-option>
+          <ion-item-option color="danger" (click)="Inative(Funcionario.Codigo, Funcionario.Funcionarios, Funcionario)">
+            <ion-icon name="person-remove-outline"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </ion-content>

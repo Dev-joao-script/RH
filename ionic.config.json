@@ -1,0 +1,7 @@
+{
+  "name": "RH Cepelma",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  }
+}

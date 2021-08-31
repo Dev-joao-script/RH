@@ -1,0 +1,35 @@
+@-webkit-keyframes fade-in-fwd{0%{-webkit-transform:translateZ(-80px);transform:translateZ(-80px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}@keyframes fade-in-fwd{0%{-webkit-transform:translateZ(-80px);transform:translateZ(-80px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}};
+.WelCome{
+  -webkit-animation:fade-in-fwd 3s cubic-bezier(.39,.575,.565,1.000) both;animation:fade-in-fwd 3s cubic-bezier(.39,.575,.565,1.000) both;
+  background: rgba(0, 0, 0, 0.164);
+  border-radius: 30px;
+  align-items: center;
+  font-size: 12px;
+  margin: 10px;
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  top: 20px;
+  position: absolute;
+}
+
+ion-content{
+  --background: white;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+@-webkit-keyframes slide-in-elliptic-left-fwd{0%{-webkit-transform:translateX(-800px) rotateY(30deg) scale(0);transform:translateX(-800px) rotateY(30deg) scale(0);-webkit-transform-origin:-100% 50%;transform-origin:-100% 50%;opacity:0}100%{-webkit-transform:translateX(0) rotateY(0) scale(1);transform:translateX(0) rotateY(0) scale(1);-webkit-transform-origin:1800px 50%;transform-origin:1800px 50%;opacity:1}}@keyframes slide-in-elliptic-left-fwd{0%{-webkit-transform:translateX(-800px) rotateY(30deg) scale(0);transform:translateX(-800px) rotateY(30deg) scale(0);-webkit-transform-origin:-100% 50%;transform-origin:-100% 50%;opacity:0}100%{-webkit-transform:translateX(0) rotateY(0) scale(1);transform:translateX(0) rotateY(0) scale(1);-webkit-transform-origin:1800px 50%;transform-origin:1800px 50%;opacity:1}};
+.Img{
+  -webkit-animation:slide-in-elliptic-left-fwd 3s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-elliptic-left-fwd 3s cubic-bezier(.25,.46,.45,.94) both;
+  width: 50%;
+  height: 50%;
+  top: 40%;
+  left: 25%;
+  position: absolute;
+}
+
+

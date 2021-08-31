@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()" color="danger">
+        Sair
+      </ion-button>
+    </ion-buttons>
+    <ion-title color="primary">{{isUpdate ? 'Editar' : 'Nova'}} pendencia: Atraso.</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <ion-item>
+      <ion-label position="floating" color="primary">Funcionario:</ion-label>
+      <ion-select multiple="false" interface="action-sheet" name="Nome" (ionChange)="teste($event);" selectedText = "{{isUpdate ? selected : ''}}" >
+        <ion-select-option *ngFor="let funcionario of funcionarios" value="{{funcionario.Codigo + '/' + funcionario.Funcionarios }}">{{funcionario.Funcionarios}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item hidden>
+      <ion-label position="floating" color="primary">Codigo:</ion-label>
+      <ion-input type="text" name="Cod"  [(ngModel)]="valueA"  value="{{valueA}}"></ion-input>
+    </ion-item>
+    <ion-item hidden>
+      <ion-label position="floating" color="primary">Nome:</ion-label>
+      <ion-input type="text"  name="Nome"  [(ngModel)]="valueB" value="{{valueB}}"></ion-input>
+    </ion-item>
+
+    <ion-item hidden>
+      <ion-label position="floating" color="primary">Nome:</ion-label>
+      <ion-input type="text"  name="Titulo" [(ngModel)]="Titulo" value="{{Titulo}}"></ion-input>
+    </ion-item>
+
+    <ion-item hidden>
+      <ion-label position="floating" color="primary">Nome:</ion-label>
+      <ion-input type="text"  name="Descricao" [(ngModel)]="Descricao" value="{{Descricao}}"></ion-input>
+    </ion-item>
+
+    <ion-item hidden>
+      <ion-label position="floating" color="primary">Nome:</ion-label>
+      <ion-input type="text"  name="Tipo" [(ngModel)]="Tipo" value="{{Tipo}}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Data:</ion-label>
+      <ion-input type="date" placeholder=""  [(ngModel)]="dataSbt.Data"  name="Data"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="primary">Batida 1:</ion-label>
+      <ion-input type="time" placeholder=""  [(ngModel)]="dataSbt.Hora_Um"  name="Hora_Um"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="primary">Batida 2:</ion-label>
+      <ion-input type="time" placeholder=""  [(ngModel)]="dataSbt.Hora_Dois"  name="Hora_Dois"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="primary">Batida 3:</ion-label>
+      <ion-input type="time" placeholder=""  [(ngModel)]="dataSbt.Hora_Tres"  name="Hora_Tres"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="primary">Batida 4:</ion-label>
+      <ion-input type="time" placeholder=""  [(ngModel)]="dataSbt.Hora_Quatro"  name="Hora_Quatro"></ion-input>
+    </ion-item>
+
+    <ion-item hidden>
+      <ion-label position="floating" color="primary">Batida 4:</ion-label>
+      <ion-input type="time" placeholder="" value = "" [(ngModel)]="dataSbt.Justificativa"  name="Justificativa"></ion-input>
+    </ion-item>
+    <ion-item hidden>
+      <ion-label position="floating" color="primary">Batida 4:</ion-label>
+      <ion-input type="time" placeholder=""  value = "" [(ngModel)]="dataSbt.Tratativa"  name="Tratativa"></ion-input>
+    </ion-item>
+    <ion-button expand="block" fill="outline" color="primary" type="submit">
+      {{isUpdate ? 'Editar' : 'Cadastrar'}}
+    </ion-button>
+  </form>
+
+</ion-content>

@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()" color="danger">
+        Sair
+      </ion-button>
+    </ion-buttons>
+    <ion-title color="primary">Tratativa da Pendencia: {{dataSbt.seq}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+    <ion-list>
+      <ion-radio-group [(ngModel)]="dataSbt.Tratativa" name="Tratativa">
+        <ion-list-header>
+          <ion-icon slot="start" name="clipboard-outline"></ion-icon>
+          <ion-label color="primary">
+            <strong>Tratativas Padronizadas:</strong>
+          </ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Abonar</ion-label>
+          <ion-radio value="Abonar" (click)="ChangOthers()"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Advertencia</ion-label>
+          <ion-radio value="Advertencia" (click)="ChangOthers()"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Banco de Horas</ion-label>
+          <ion-radio value="Banco de Horas" (click)="ChangOthers()"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Compensar</ion-label>
+          <ion-radio value="Compensar" (click)="ChangOthers()"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Descontar</ion-label>
+          <ion-radio value="Descontar" (click)="ChangOthers()"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Suspenção</ion-label>
+          <ion-radio value="Suspenção" (click)="ChangOthers()"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Habilitar "Outros"</ion-label>
+          <ion-checkbox slot="end" [(ngModel)]="optionsOn" name="optionsOn" (click)="ChangOpt()" ></ion-checkbox>
+        </ion-item>
+
+        <ion-item [ngClass]="optionsOn ? 'show' : 'hide'   ">
+          <ion-input type="text" placeholder="Qual?..." autocomplete class="Option" name="Tratativa" [(ngModel)]="dataSbt.Tratativa"></ion-input>
+        </ion-item>       
+      </ion-radio-group>
+    </ion-list>
+
+    <ion-item class="DspNone">
+      <ion-label position="floating" color="primary">Data da Tratativa:</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="dataSbt.view2" name="view2"></ion-datetime>
+    </ion-item>
+
+    <ion-item class="DspNone">
+      <ion-label position="floating" color="primary">Responsavel</ion-label>
+      <ion-input type="text" placeholder=""  value = "" [(ngModel)]="dataSbt.view"  name="view"></ion-input>
+    </ion-item>
+    
+    <ion-button expand="block" fill="outline" color="primary" type="submit">
+      Enviar Para RH
+    </ion-button>
+  </form>
+
+</ion-content>
